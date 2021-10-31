@@ -1,10 +1,10 @@
 const fs = require("fs")
 
-const input_dir = "/home/inadmin/python-scripts/cdr_input"
+const input_dir = "/home/ocadmin/python-scripts/cdr_input"
 
 const files = fs.readdirSync(input_dir)
 
-if (files.length > 0) {
+/*if (files.length > 0) {
     files.forEach((item, index) => {
         if (index <= 25) {
             let input_file = `${input_dir}/${item}`
@@ -72,6 +72,16 @@ if (files.length > 0) {
             fs.copyFileSync(input_file, output_file)
 
         }
+    })
+}*/
+
+if (files.length >0 ){
+    files.forEach((value, index) => {
+       const idx = index % 20
+        let input_file = `${input_dir}/${value}`
+        let output_file = `/home/ocadmin/python-scripts/cdr-decoder_${idx}/input_dir/${value}`
+        fs.copyFileSync(input_file, output_file)
+
     })
 }
 
