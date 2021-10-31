@@ -77,7 +77,7 @@ const files = fs.readdirSync(input_dir)
 
 if (files.length >0 ){
     files.forEach((value, index) => {
-       const idx = index % 20
+       const idx = index % 50
         let input_file = `${input_dir}/${value}`
         let output_file = `/home/ocadmin/python-scripts/cdr-decoder_${idx}/input_dir/${value}`
         fs.copyFileSync(input_file, output_file)
